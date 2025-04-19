@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Over</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #e74c3c;
+    }
+
+    .message {
+      font-size: 32px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .flag {
+      padding: 30px 60px;
+      font-size: 40px;
+      color: white;
+      border: none;
+      cursor: not-allowed;
+      border-radius: 8px;
+      margin: 20px;
+    }
+
+    .red { background-color: #ff4d4d; }
+    .blue { background-color: #4d79ff; }
+    .green { background-color: #4dff4d; }
+    .yellow { background-color: #ffff4d; }
+  </style>
+</head>
+<body>
+
+  <h1>You lose!</h1>
+  <p class="message">You have captured the wrong flag!</p>
+
+  <!-- Display the flag -->
+  <div id="wrongFlag" class="flag"></div>
+
+  <script>
+    // Get the flag color from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const flagColor = urlParams.get('flag');
+
+    // Change the flag color based on the query param
+    const wrongFlag = document.getElementById('wrongFlag');
+    if (flagColor) {
+      wrongFlag.classList.add(flagColor); // Add the color class to the div
+    }
+  </script>
+
+</body>
+</html>
