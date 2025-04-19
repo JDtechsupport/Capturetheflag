@@ -1,0 +1,1 @@
+function gotonextpage () {window.location.href = "next.html";}

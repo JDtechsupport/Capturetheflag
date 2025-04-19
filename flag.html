@@ -61,25 +61,31 @@
   <script>
     // Track which flag was selected
     let selectedFlag = null;
+    let moveInterval = null; // To store the interval for continuous flag movement
 
     // Handle flag selection
     function selectFlag(color) {
       if (selectedFlag !== color) {
-        // Mark the selected flag (but no border now)
+        // Mark the selected flag (no display or alert)
         selectedFlag = color;
         
-        // Show an alert with the selected flag color
-        alert("You have selected the " + color + " flag!");
-        
-        // Move flags away when clicked
+        // Start moving the flags immediately after selection
         moveFlags();
+
+        // Stop any previous interval if any
+        if (moveInterval) {
+          clearInterval(moveInterval);
+        }
+
+        // Start the continuous flag movement
+        moveInterval = setInterval(moveFlags, 100); // Move every 100ms
       } else {
         // If the same flag is clicked again, trigger the "You Lose" page
         window.location.href = 'lose.html';  // Redirect to the lose page
       }
     }
 
-    // Function to move flags away after being selected
+    // Function to move flags continuously
     function moveFlags() {
       const flags = document.querySelectorAll('.flag-button');
       flags.forEach(flag => {

@@ -13,16 +13,8 @@
       margin-top: 50px;
     }
 
-    /* "Let's play a game" text styling */
-    .game-text {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px; /* Space between the text and the button */
-    }
-
-    /* Stylish Start button */
     .start-button {
-      background-color: #4CAF50; /* Green background */
+      background-color: #4CAF50;
       border: none;
       color: white;
       padding: 15px 32px;
@@ -30,31 +22,17 @@
       text-decoration: none;
       display: inline-block;
       font-size: 20px;
-      border-radius: 50px; /* Rounded corners */
+      border-radius: 50px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-top: 30px; /* Push the button a bit lower */
+      margin-top: 30px;
     }
 
     .start-button:hover {
-      background-color: #45a049; /* Darker green on hover */
-      transform: translateY(-5px); /* Slight lift effect */
+      background-color: #45a049;
     }
 
     .start-button:active {
-      background-color: #388e3c; /* Even darker green when clicked */
-      transform: translateY(2px); /* Slight push down effect */
-    }
-
-    h1 {
-      font-size: 36px;
-      color: #333;
-    }
-
-    p {
-      font-size: 18px;
-      color: #666;
+      background-color: #388e3c;
     }
   </style>
 </head>
@@ -62,16 +40,11 @@
   <h1>Hello, World!</h1>
   <p>This is my first website.</p>
 
-  <!-- Text displayed above the button -->
-  <div class="game-text">Let's play a game</div>
-
-  <!-- Elegant Start button -->
-  <button class="start-button" onclick="gotothenextpage()">Start</button>
+  <button class="start-button" onclick="startGame()">Start</button>
 
   <script>
-    // JavaScript function to navigate to 'flag.html'
-    function gotothenextpage() {
-      window.location.href = 'flag.html';  // Redirect to flag.html
+    function startGame() {
+      window.location.href = 'countdown.html';  // Redirect to countdown.html page
     }
   </script>
 </body>

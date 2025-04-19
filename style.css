@@ -1,0 +1,41 @@
+/* Set the overall page style */
+body {
+background-color: aqua;
+font-family: 'Georgia', serif; /* A fancy built-in font */
+color: #333;
+padding: 20px;
+text-align: center;
+}
+
+/* Optional: Style your heading and paragraph a bit */
+h1 {
+color: #004488;
+font-size: 48px;
+}
+
+p {
+font-size: 20px;
+}
+
+#button style
+button {
+padding: 15px 30px;
+font-size: 18px;
+background-color: #4CAF50; /* Green color */
+color: white;
+border: none;
+border-radius: 10px; /* Rounded corners */
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+transition: all 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+background-color: #45a049; /* Darker green on hover */
+transform: translateY(-3px); /* Button lifts slightly */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow deepens */
+}
+
+button:focus {
+outline: none; /* Remove the default focus outline */
+}
