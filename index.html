@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My First Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Website</title>
+  <style>
+    /* Page styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* "Let's play a game" text styling */
+    .game-text {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px; /* Space between the text and the button */
+    }
+
+    /* Stylish Start button */
+    .start-button {
+      background-color: #4CAF50; /* Green background */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      border-radius: 50px; /* Rounded corners */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px; /* Push the button a bit lower */
+    }
+
+    .start-button:hover {
+      background-color: #45a049; /* Darker green on hover */
+      transform: translateY(-5px); /* Slight lift effect */
+    }
+
+    .start-button:active {
+      background-color: #388e3c; /* Even darker green when clicked */
+      transform: translateY(2px); /* Slight push down effect */
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-<h1>Hello, World!</h1>
-<p>This is my first website.</p>
+  <h1>Hello, World!</h1>
+  <p>This is my first website.</p>
+
+  <!-- Text displayed above the button -->
+  <div class="game-text">Let's play a game</div>
+
+  <!-- Elegant Start button -->
+  <button class="start-button" onclick="gotothenextpage()">Start</button>
+
+  <script>
+    // JavaScript function to navigate to 'flag.html'
+    function gotothenextpage() {
+      window.location.href = 'flag.html';  // Redirect to flag.html
+    }
+  </script>
 </body>
 </html>
