@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Selection</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .flag-button {
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s ease; /* Only transition the scale effect */
+    }
+
+    .flag-button:hover {
+      transform: scale(1.1); /* Slight scaling effect when hovered */
+      /* No background-color change here anymore */
+    }
+
+    .red { background-color: red; }
+    .blue { background-color: blue; }
+    .green { background-color: green; }
+    .yellow { background-color: yellow; }
+    .purple { background-color: purple; }
+  </style>
+</head>
+<body>
+  <h1>Select Your Flag</h1>
+  <p>Click on the colored flag of your choice!</p>
+
+  <!-- Flag Buttons (Colored Squares) -->
+  <div id="flag-selection-container">
+    <div class="flag-button red" id="red-flag" onclick="selectFlag('red')"></div>
+    <div class="flag-button blue" id="blue-flag" onclick="selectFlag('blue')"></div>
+    <div class="flag-button green" id="green-flag" onclick="selectFlag('green')"></div>
+    <div class="flag-button yellow" id="yellow-flag" onclick="selectFlag('yellow')"></div>
+    <div class="flag-button purple" id="purple-flag" onclick="selectFlag('purple')"></div>
+  </div>
+
+  <script>
+    // Track which flag was selected
+    let selectedFlag = null;
+
+    // Handle flag selection
+    function selectFlag(color) {
+      if (selectedFlag !== color) {
+        // Mark the selected flag (but no border now)
+        selectedFlag = color;
+        
+        // Show an alert with the selected flag color
+        alert("You have selected the " + color + " flag!");
+        
+        // Move flags away when clicked
+        moveFlags();
+      } else {
+        // If the same flag is clicked again, trigger the "You Lose" page
+        window.location.href = 'lose.html';  // Redirect to the lose page
+      }
+    }
+
+    // Function to move flags away after being selected
+    function moveFlags() {
+      const flags = document.querySelectorAll('.flag-button');
+      flags.forEach(flag => {
+        flag.style.position = 'relative';
+        flag.style.transition = 'all 1s ease';
+        const randomX = Math.random() * 500 - 250; // Move within a range (left or right)
+        const randomY = Math.random() * 500 - 250; // Move within a range (up or down)
+        flag.style.transform = `translate(${randomX}px, ${randomY}px)`; // Move flag randomly
+      });
+    }
+  </script>
+</body>
+</html>
